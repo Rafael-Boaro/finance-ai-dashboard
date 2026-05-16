@@ -14,7 +14,7 @@ const data = [
 
 export default function Dashboard() {
   const [inputTexto, setInputTexto] = useState("");
-  const [resultadoIA, setResultadoIA] = useState<any>(null);
+const [resultadoIA, setResultadoIA] = useState<{categoria: string, valor: number | string, sugestao: string} | null>(null);
   const [loading, setLoading] = useState(false);
 
   async function handleProcessar() {
@@ -136,7 +136,7 @@ export default function Dashboard() {
   );
 }
 
-function Card({ title, amount, icon, color = "text-gray-900" }: any) {
+function Card({ title, amount, icon, color = "text-gray-900" }: { title: string, amount: string | number, icon: React.ReactNode, color?: string }) {
   return (
     <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200 flex items-center justify-between hover:shadow-lg transition-shadow">
       <div>
