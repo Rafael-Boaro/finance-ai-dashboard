@@ -1,23 +1,25 @@
 'use server'
 
-import { GoogleGenerativeAI } from "@google/generative-ai";
+export async function analisarTransacao(textoUsuario: string) {
+  if (!textoUsuario) return null;
 
-// Sua chave (está correta, mantive a mesma)
-// Puxando a chave de forma segura
-const apiKey = process.env.GEMINI_API_KEY;
+  // Simula o tempo de "pensamento" da IA para você ver o botão de loading girando
+  await new Promise(resolve => setTimeout(resolve, 1500));
 
-if (!apiKey) {
-  throw new Error("A chave GEMINI_API_KEY não está definida nas variáveis de ambiente.");
+
+  return {
+    categoria: "Simulação de Lazer",
+    valor: 50.00,
+    sugestao: "Esta é uma simulação da interface visual. A IA será conectada futuramente!"
+  };
 }
-
 const genAI = new GoogleGenerativeAI(apiKey);
 
 export async function analisarTransacao(textoUsuario: string) {
   if (!textoUsuario) return null;
 
   try {
-    // IMPORTANTE: Agora que atualizamos a biblioteca no Passo 1,
-    // o modelo 'gemini-1.5-flash' vai funcionar. Ele é o padrão atual.
+
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
     const prompt = `
@@ -36,7 +38,7 @@ export async function analisarTransacao(textoUsuario: string) {
 
     console.log("🤖 Resposta da IA:", text);
 
-    // Limpeza para garantir JSON puro
+    // Limpeza
     const jsonString = text.replace(/```json/g, "").replace(/```/g, "").trim();
     
     return JSON.parse(jsonString);
