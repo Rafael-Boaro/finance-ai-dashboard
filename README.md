@@ -1,67 +1,54 @@
-# 📊 Plataforma Financeira com IA (Finance.AI)
+# 💰 FINANCE.AI — Dashboard Financeiro (UI/UX Prototype)
 
-Este projeto é um dashboard financeiro de última geração que utiliza Inteligência Artificial para processar, categorizar e analisar transações financeiras em tempo real. Desenvolvido durante meus estudos avançados em **Next.js 16** e **IA Generativa**, ele resolve o problema da organização manual de gastos, transformando frases simples em dados estruturados.
+O **FINANCE.AI** é um painel de controle financeiro moderno focado em alta legibilidade, contraste e fluidez de interface. Esta versão funciona como um **Protótipo Funcional (UI/UX Demo)**, simulando operações assíncronas do lado do servidor para validar a experiência do usuário antes da integração completa com modelos de inteligência artificial.
 
 ---
 
-## 🚀 Tecnologias de Ponta
+## ⚠️ Status do Projeto: Demonstração Visual & Fluxo Assíncrono
+O projeto implementa uma arquitetura de dados simulados (*Mocks*). A função de análise de transações no backend simula ativamente uma latência de rede de 1500ms. Isso permite homologar o comportamento mecânico do front-end, como o bloqueio de múltiplos cliques em botões, desativação de inputs e inicialização de micro-animações de carregamento (*spinners*) de forma robusta.
 
-Para este projeto, utilizei a vanguarda do ecossistema Web para garantir performance máxima e segurança:
+---
+
+## 🛠️ Tecnologias e Ecossistema
+
+O projeto adota a vanguarda das ferramentas web para garantir performance máxima:
 
 * **Framework:** [Next.js 16](https://nextjs.org/) (App Router & Server Actions)
-* **Biblioteca:** [React 19](https://react.dev/) (Utilizando o novo React Compiler)
-* **Estilização:** [Tailwind CSS 4](https://tailwindcss.com/) (Motor de alta performance)
-* **IA:** [Google Gemini 1.5 Flash](https://ai.google.dev/) (Integração via SDK oficial)
-* **Linguagem:** [TypeScript](https://www.typescriptlang.org/) (Tipagem estrita para maior robustez)
-* **Gráficos:** [Recharts](https://recharts.org/) (Visualizações interativas e responsivas)
+* **Biblioteca Core:** [React 19](https://react.dev/)
+* **Estilização:** [Tailwind CSS 4](https://tailwindcss.com/) (Arquitetura moderna de alta performance)
+* **Gráficos:** [Recharts](https://recharts.org/) (Renderização dinâmica de dados)
+* **Linguagem:** [TypeScript](https://www.typescriptlang.org/) (Tipagem estrita e prevenção de falhas em tempo de build)
+* **Ícones:** Lucide-React
 
 ---
 
-## 🎯 Funcionalidades Principais
+## 🎯 Destaques de Engenharia no Front-end
 
-* **Processamento Natural de Gastos:** O usuário digita frases como "Gastei 50 reais no BK" e a IA identifica automaticamente o valor (50.00), a categoria (Alimentação) e fornece uma dica personalizada.
-* **Dashboard Inteligente:** Resumo de saldo, entradas e saídas com interface de alto contraste para melhor usabilidade.
-* **Gráficos em Tempo Real:** Visualização dinâmica da distribuição de gastos por categoria.
-* **Segurança (Server-Side):** Toda a lógica da IA e chaves de acesso são processadas via **Server Actions**, impedindo a exposição de credenciais sensíveis no navegador.
+* **Gerenciamento de Estados Assíncronos:** Controle rigoroso do ciclo de vida das requisições, prevenindo condições de corrida (*race conditions*) na interface gráfica.
+* **Componentização Limpa:** Tipagem clara de propriedades para garantir manutenibilidade a longo prazo.
+* **Design de Alto Contraste:** Estilização focada em usabilidade, com separações visuais marcantes e feedback imediato para as ações do usuário.
+* **Pronto para Escalar:** A assinatura do contrato de dados da Server Action está idêntica à que será consumida pela API real, permitindo uma transição com impacto zero na camada visual.
 
 ---
 
-## 📦 Como Executar o Projeto
+## 📦 Inicialização Local
 
-1.  **Clone o repositório:**
-    ```bash
-    git clone [https://github.com/rafael-boaro/plataforma-de-financias-com-ia.git](https://github.com/rafael-boaro/plataforma-de-financias-com-ia.git)
-    ```
-2.  **Instale as dependências:**
+1. **Clonar o repositório:**
+   ```bash
+   git clone [https://github.com/rafael-boaro/finance-ai-dashboard.git](https://github.com/rafael-boaro/finance-ai-dashboard.git)
+2. **Instalar dependências de produção:**
     ```bash
     npm install
-    ```
-3.  **Configure as Variáveis de Ambiente:**
-    Crie um arquivo `.env.local` na raiz e adicione sua chave do Google AI Studio:
-    ```env
-    GEMINI_API_KEY=sua_chave_aqui
-    ```
-4.  **Rode em modo de desenvolvimento:**
+3. **Executar o ambiente de desenvolvimento:**
+
     ```bash
     npm run dev
-    ```
+    Acesse http://localhost:3000 no seu navegador.
 
----
+**Próximos Passos**
+```bash
+[ ] Ativação do SDK oficial @google/generative-ai no lado do servidor.
 
-## ☁️ Notas sobre Deploy (Vercel)
+[ ] Validação estrita dos esquemas JSON gerados pela IA utilizando a biblioteca Zod.
 
-Se você encontrar erros no deploy da Vercel, verifique os seguintes pontos:
-
-1.  **Variáveis de Ambiente:** Certifique-se de que a `GEMINI_API_KEY` foi adicionada manualmente nas configurações do projeto na Vercel (Project Settings > Environment Variables).
-2.  **Regiões do Servidor:** Como o Gemini API possui restrições geográficas, certifique-se de que a "Serverless Function Region" na Vercel está configurada para uma região suportada (ex: `Washington, D.C., USA - iad1`).
-3.  **Node.js Version:** Garanta que a Vercel está utilizando a versão do Node compatível com o Next.js 16 (Node 18.x ou superior).
-
----
-
-## 🛡️ Segurança e Boas Práticas
-
-* Uso rigoroso de `.gitignore` para proteger arquivos de ambiente.
-* Tratamento de erros robusto para falhas de conexão com a API de IA.
-* Código modularizado para facilitar a manutenção e escalabilidade.
-
----
+[ ] Persistência de dados das transações em banco de dados relacional.
