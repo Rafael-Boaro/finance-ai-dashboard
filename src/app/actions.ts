@@ -2,18 +2,12 @@
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// Puxando a chave de forma segura
-const apiKey = process.env.GEMINI_API_KEY;
-
-// Boa prática: avisar se a chave estiver faltando
-if (!apiKey) {
-  throw new Error("A chave GEMINI_API_KEY não está definida nas variáveis de ambiente.");
-}
+// Sua chave (está correta, mantive a mesma)
+const apiKey = "AIzaSyAynbVMlVAi0BeYDP0tX5-yDZfH9AVCQxQ"; 
 
 const genAI = new GoogleGenerativeAI(apiKey);
 
 export async function analisarTransacao(textoUsuario: string) {
-// ... resto do seu código continua igual
   if (!textoUsuario) return null;
 
   try {
