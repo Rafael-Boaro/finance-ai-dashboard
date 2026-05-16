@@ -3,7 +3,12 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // Sua chave (está correta, mantive a mesma)
-const apiKey = "AIzaSyAynbVMlVAi0BeYDP0tX5-yDZfH9AVCQxQ"; 
+// Puxando a chave de forma segura
+const apiKey = process.env.GEMINI_API_KEY;
+
+if (!apiKey) {
+  throw new Error("A chave GEMINI_API_KEY não está definida nas variáveis de ambiente.");
+}
 
 const genAI = new GoogleGenerativeAI(apiKey);
 
