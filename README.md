@@ -44,11 +44,3 @@ O projeto adota a vanguarda das ferramentas web para garantir performance máxim
     ```bash
     npm run dev
     Acesse http://localhost:3000 no seu navegador.
-
-**Próximos Passos**
-```bash
-[ ] Ativação do SDK oficial @google/generative-ai no lado do servidor.
-
-[ ] Validação estrita dos esquemas JSON gerados pela IA utilizando a biblioteca Zod.
-
-[ ] Persistência de dados das transações em banco de dados relacional.
