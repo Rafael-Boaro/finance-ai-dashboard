@@ -11,14 +11,14 @@ O projeto implementa uma arquitetura de dados simulados (*Mocks*). A função de
 
 ## Tecnologias e Ecossistema
 
-O projeto adota a vanguarda das ferramentas web para garantir performance máxima:
-
-* **Framework:** [Next.js 16](https://nextjs.org/) (App Router & Server Actions)
-* **Biblioteca Core:** [React 19](https://react.dev/)
-* **Estilização:** [Tailwind CSS 4](https://tailwindcss.com/) (Arquitetura moderna de alta performance)
-* **Gráficos:** [Recharts](https://recharts.org/) (Renderização dinâmica de dados)
-* **Linguagem:** [TypeScript](https://www.typescriptlang.org/) (Tipagem estrita e prevenção de falhas em tempo de build)
-* **Ícones:** Lucide-React
+| Camada | Tecnologia | Finalidade |
+|---|---|---|
+| Framework Full-Stack | Next.js 16 (App Router) | Renderizacao hibrida e execucao de Server Actions |
+| Biblioteca de UI | React 19 | Componentizacao declarativa e controle de ciclo de vida |
+| Linguagem | TypeScript | Tipagem estrita de props e contratos de dados |
+| Estilizacao | Tailwind CSS 4 | Design system de alta performance e responsividade |
+| Visualizacao de Dados | Recharts | Renderizacao dinamica de graficos financeiros |
+| Iconografia | Lucide-React | Icones vetoriais minimalistas e leves |
 
 ---
 
@@ -33,14 +33,20 @@ O projeto adota a vanguarda das ferramentas web para garantir performance máxim
 
 ## Inicialização Local
 
-1. **Clonar o repositório:**
-   ```bash
-   git clone [https://github.com/rafael-boaro/finance-ai-dashboard.git](https://github.com/rafael-boaro/finance-ai-dashboard.git)
-2. **Instalar dependências de produção:**
-    ```bash
-    npm install
-3. **Executar o ambiente de desenvolvimento:**
+### 1. Clonar o repositório
+```bash
+git clone https://github.com/Rafael-Boaro/finance-ai-dashboard.git
+cd finance-ai-dashboard
+```
 
-    ```bash
-    npm run dev
-    Acesse http://localhost:3000 no seu navegador.
+### 2. Instalar dependências
+```bash
+npm install
+```
+
+### 3. Executar o ambiente de desenvolvimento
+```bash
+npm run dev
+```
+
+Acesse `http://localhost:3000` no seu navegador.
